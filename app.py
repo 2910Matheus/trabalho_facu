@@ -25,7 +25,7 @@ with open('sintomas_pacientes.txt', 'r', encoding='utf-8') as arquivo_txt:
         par_sintoma_diagnostico = (paciente_sintomas.strip())
         sintomas_paciente.append(par_sintoma_diagnostico)
     
-#print(sintomas_paciente)
+print(sintomas_paciente)
 print('=' * 50)
 
 for frase in sintomas_paciente:
