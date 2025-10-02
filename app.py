@@ -15,8 +15,8 @@ with open ('mapa_sintomas_doencas.csv', 'r', encoding='utf-8') as arquivo_csv:
             linha_dict['Sintoma 2'].strip()
         ]
         mapa_conhecimento[doenca] = sintomas
-
-print('=' * 50)
+print(mapa_conhecimento)
+print('=' * 100)
 
 # Texto dos sintomas dos pacientes
 with open('sintomas_pacientes.txt', 'r', encoding='utf-8') as arquivo_txt:
@@ -26,16 +26,15 @@ with open('sintomas_pacientes.txt', 'r', encoding='utf-8') as arquivo_txt:
         sintomas_paciente.append(par_sintoma_diagnostico)
     
 print(sintomas_paciente)
-print('=' * 50)
+print('=' * 100)
 
 for frase in sintomas_paciente:
     for doenca, sintomas in mapa_conhecimento.items():
         encontrados = [s for s in sintomas if s.lower() in frase.lower()]
 
         if encontrados:  # só entra se achou algum sintoma
-            print("=" * 50)
-            print(f"Na frase: '{frase}' encontrei os sintomas {', '.join(encontrados)} relacionados a {doenca}.")
-            
+            print(f"Na frase: '{frase}' foi encontrado os sintomas {', '.join(encontrados)} relacionados a {doenca}.")
+            print("=" * 100)
             # soma quantos sintomas foram achados
             resultado[doenca] = resultado.get(doenca, 0) + len(encontrados)
 
