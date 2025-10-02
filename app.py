@@ -4,7 +4,6 @@ mapa_conhecimento = {}
 sintomas_paciente = []
 resultado = {}
 
-
 # Mapa de sintomas para detectar a causa
 with open ('mapa_sintomas_doencas.csv', 'r', encoding='utf-8') as arquivo_csv:
     leitor_csv = csv.DictReader(arquivo_csv)
